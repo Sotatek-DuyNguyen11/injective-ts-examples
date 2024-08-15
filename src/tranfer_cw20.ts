@@ -1,13 +1,18 @@
+import { BigNumberInBase } from '@injectivelabs/utils';
 import { MsgExecuteContract, MsgBroadcasterWithPk } from '@injectivelabs/sdk-ts'
 import { Network } from '@injectivelabs/networks'
 import { config } from "dotenv";
 import { PrivateKey } from '@injectivelabs/sdk-ts'
 config();
 (async () => {
-  const injectiveAddress = 'inj1z6sccypszye9qke2w35m3ptmj7c4tjr2amedyf'
-  const recipientAddress = 'inj1sqrfhf9z3k2udx2lqhj8v6v0kr0dp49nfnfmhx'
-  const contractAddress = 'inj1uxkmrgz9rrunxsewlzhq6dl2fkn8q8llm4q9hp'
+  const mnemonic = process.env.MNEMONIC
+  console.log("🚀 ~ mnemonic:", mnemonic)
+  const privateKey = PrivateKey.fromMnemonic(mnemonic!)
 
+  const injectiveAddress = 'inj1z6sccypszye9qke2w35m3ptmj7c4tjr2amedyf'
+  const recipientAddress = 'inj1kcfx3fpqj5j9v8s2jeg7qdpjc43487pqecegan'
+  const contractAddress = process.env.CW_20_CONTRACT!
+  const amount = new BigNumberInBase(126).toWei().toFixed();
   
   const msg = MsgExecuteContract.fromJSON({
     contractAddress,
@@ -15,19 +20,11 @@ config();
     msg: {
       transfer: {
         recipient: recipientAddress,
-        amount: "100000"
+        amount
       }
     },
   })
   console.log("🚀 ~ msg:", msg)
-
-  const mnemonic = process.env.MNEMONIC
-  console.log("🚀 ~ mnemonic:", mnemonic)
-  
-  const privateKey = PrivateKey.fromMnemonic(mnemonic!)
-  
-
-  
 
   try {
     const txHash = await new MsgBroadcasterWithPk({
