@@ -1,5 +1,8 @@
 
 (async () => {
-    const epoch = (new Date('2024-08-14 04:12:54.442 +0000 UTC')).getTime()
+    const epoch = (new Date('2024-07-29 04:44:27.264 +0000 UTC')).getTime()
     console.log('epoch: ', epoch)
+    const now = Date.now();
+    console.log('now: ', now);
+    
 })()

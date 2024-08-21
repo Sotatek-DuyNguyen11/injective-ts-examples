@@ -3,7 +3,7 @@ import { getNetworkEndpoints, Network } from '@injectivelabs/networks'
 
 
 (async () => {
-    const contractAddress = 'inj1sqrfhf9z3k2udx2lqhj8v6v0kr0dp49nfnfmhx'
+    const contractAddress = 'inj1jgrxnhe8fuel790mfutfkkn9kg87fk8jamux3n'
     try {
         const endpoints = getNetworkEndpoints(Network.Testnet)
         const chainGrpcWasmApi = new ChainGrpcWasmApi(endpoints.grpc)

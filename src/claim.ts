@@ -16,7 +16,7 @@ config();
       
         const stakingContract = process.env.STAKING_CONTRACT!;
 
-        const amount = new BigNumberInBase(0.002345).toWei().toFixed();
+        const amount = new BigNumberInBase(0.00001).toWei(6).toFixed();
 
         console.log('amount: ', amount);
 
@@ -24,10 +24,9 @@ config();
             contractAddress: stakingContract,
             sender,
             msg: {
-                unstake: {
-                    staked_id: '12312312',
+                claim_reward: {
                     amount,
-                    signature: '8a21ceb8ca6b6bb586b5465298aa94c715edf8ea950931e52a230fa74c54a85278308b16c3b4f2c555b677c4ac1e37ff68825ec4bd9c76a79d757bcc7810cf2b'
+                    signature: '6defec08614924d1e603ee528f1d20e637894d9d73c0e5a9b1aed713733ecba959b31a4967cd012f92e1968ee8db7c1943999b825009ac3e9456ff196838d4b2'
                 }
             },
         })
@@ -42,6 +41,6 @@ config();
 
         console.log('Transaction hash:', txHash)
     } catch (error: any) {
-        console.error('Transaction failed:', error.message)
+        console.error('Transaction failed:', error)
     }
 })();

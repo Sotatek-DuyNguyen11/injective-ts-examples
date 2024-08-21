@@ -7,7 +7,7 @@ config();
 
 (async () => {
   try {
-    const mnemonic = process.env.MNEMONIC
+    const mnemonic = process.env.MNEMONIC_SENDER
     const privateKey = PrivateKey.fromMnemonic(mnemonic!)
     console.log("🚀 ~ privateKey:", privateKey)
 
@@ -17,7 +17,7 @@ config();
     const recipientAddress = process.env.STAKING_CONTRACT // staking_contract is recipient
     const cw20 = process.env.CW_20_CONTRACT! 
 
-    const amount = new BigNumberInBase(0.02345).toWei().toFixed();
+    const amount = new BigNumberInBase(0.0000451).toWei(18).toFixed();
     
     console.log('amount: ', amount);
     

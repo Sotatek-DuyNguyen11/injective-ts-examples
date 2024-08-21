@@ -18,7 +18,7 @@ async function main() {
   
   const keypair = await Secp256k1.makeKeypair(privkey);
   
-  const staked_id = 'e28b01b52ba04b36076be0602aebdc25';
+  const staked_id = '12312312';
   const amount = new BigNumberInBase(0.002345).toWei().toFixed();
 
   
