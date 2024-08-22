@@ -15,11 +15,13 @@
     "@cosmjs/stargate": "^0.32.4",
     "@injectivelabs/sdk-ts": "^1.14.13",
     "@types/node": "^22.1.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.4",
+    "axios": "^1.7.4",
+    "dayjs": "^1.11.13",
     "dotenv": "^16.0.3",
     "global": "^4.4.0",
-    "js-base64": "^3.7.2"
+    "js-base64": "^3.7.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",

@@ -16,7 +16,7 @@ async function main() {
   const sender = privateKey.toAddress().toBech32();
   const privkey = fromHex("e3a1f7b0c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0");
   const keypair = await Secp256k1.makeKeypair(privkey);
-  const amount = new BigNumberInBase(0.00001).toWei(6).toFixed();
+  const amount = new BigNumberInBase(0.01).toWei(6).toFixed();
   console.log('amount: ', amount);
   
   const msg = `execute_claim_reward: amount = ${amount}/ user = ${sender}`;
