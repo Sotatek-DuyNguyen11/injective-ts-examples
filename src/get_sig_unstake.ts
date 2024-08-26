@@ -9,17 +9,17 @@ function toUint8Array(str: string): Uint8Array {
 }
 
 async function main() {
-  const mnemonic = process.env.MNEMONIC
+  const mnemonic = process.env.MNEMONIC_DUYNT_3
   const privateKey = PrivateKey.fromMnemonic(mnemonic!)
 
   const sender = privateKey.toAddress().toBech32();
 
-  const privkey = fromHex("e3a1f7b0c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0");
+  const privkey = fromHex(process.env.FROM_HEX!);
   
   const keypair = await Secp256k1.makeKeypair(privkey);
   
   const staked_id = '12312312';
-  const amount = new BigNumberInBase(0.002345).toWei().toFixed();
+  const amount = new BigNumberInBase(8).toWei().toFixed();
 
   
   const msg = `execute_unstake: staked_id = ${staked_id} / amount = ${amount} / user = ${sender}`;

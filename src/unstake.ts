@@ -7,7 +7,7 @@ config();
 
 (async () => {
     try {
-        const mnemonic = process.env.MNEMONIC
+        const mnemonic = process.env.MNEMONIC_DUYNT_3
         const privateKey = PrivateKey.fromMnemonic(mnemonic!)
         console.log("🚀 ~ privateKey:", privateKey)
 
@@ -16,7 +16,7 @@ config();
       
         const stakingContract = process.env.STAKING_CONTRACT!;
 
-        const amount = new BigNumberInBase(0.002345).toWei().toFixed();
+        const amount = new BigNumberInBase(8).toWei().toFixed();
 
         console.log('amount: ', amount);
 
@@ -25,9 +25,9 @@ config();
             sender,
             msg: {
                 unstake: {
-                    staked_id: '12312312',
+                    staked_id: '12312312123123',
                     amount,
-                    signature: '8a21ceb8ca6b6bb586b5465298aa94c715edf8ea950931e52a230fa74c54a85278308b16c3b4f2c555b677c4ac1e37ff68825ec4bd9c76a79d757bcc7810cf2b'
+                    signature: ''
                 }
             },
         })

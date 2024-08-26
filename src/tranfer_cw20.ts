@@ -13,15 +13,15 @@ config();
 
   const injectiveAddress = 'inj1z6sccypszye9qke2w35m3ptmj7c4tjr2amedyf'
   // const recipientAddress = 'inj1kcfx3fpqj5j9v8s2jeg7qdpjc43487pqecegan'
-  const recipientAddress = getAddressFromMnemomic(process.env.MNEMONIC_SENDER!);
+  const recipientAddress = getAddressFromMnemomic(process.env.MNEMONIC_DUYNT_3!);
   const contractAddress = process.env.CW_20_CONTRACT!
-  const amount = new BigNumberInBase(126).toWei().toFixed();
+  const amount = new BigNumberInBase(10).toWei(18).toFixed();
   
   const msg = MsgExecuteContract.fromJSON({
     contractAddress,
     sender: injectiveAddress,
     msg: {
-      send: {
+      transfer: {
         recipient: recipientAddress,
         amount
       }
