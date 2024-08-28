@@ -6,7 +6,7 @@ config();
 
 (async () => {
   try {
-    const mnemonic = process.env.MNEMONIC_SENDER
+    const mnemonic = process.env.MNEMONIC
     const privateKey = PrivateKey.fromMnemonic(mnemonic!)
 
     const sender = privateKey.toAddress().toBech32();
@@ -15,10 +15,11 @@ config();
     // const fundFactoryContract = process.env.FUND_FACTORY!
     
     const msg = MsgExecuteContract.fromJSON({
-      contractAddress: 'inj1hkwhjsvrpanfks8npse2cz993j53v3m743ghh5',
+      contractAddress: 'inj1w5hjvtv9xa32r2ql838p3vw3phz79xdydhjgde',
       sender,
       msg: {
         create_vault: {
+            name: "duynt-1",
             symbol: "duynt-1",
             denomination_asset: "peggy0x87aB3B4C8661e07D6372361211B96ed4Dc36B1B5",
             vault_manager: sender,
@@ -42,6 +43,7 @@ config();
                 }
             },
             is_enabled_whitelist: false,
+            withdraw_lockup_period: "64",
             min_deposit_amount: "1000000",
             max_deposit_amount: "10000000000"
         },

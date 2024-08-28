@@ -6,24 +6,28 @@ config();
 
 (async () => {
   try {
+    // inj1qwqal6egl9r45nn0433z6xsaz60d5m5v6tjhug MENEMONIC_3
+    // inj1z6sccypszye9qke2w35m3ptmj7c4tjr2amedyf
     const mnemonic = process.env.MNEMONIC
     const privateKey = PrivateKey.fromMnemonic(mnemonic!)
-    console.log("🚀 ~ privateKey:", privateKey)
 
     const sender = privateKey.toAddress().toBech32();
-    console.log("🚀 ~ sender:", sender)
+    console.log('sender: ', sender);
     
-    const FUND_FACTORY = process.env.FUND_FACTORY!
-
+    // const fundFactoryContract = process.env.FUND_FACTORY!
+    
     const msg = MsgExecuteContract.fromJSON({
-      contractAddress: FUND_FACTORY,
+      contractAddress: 'inj1ygcvq2vzldwq0vr7mr0ha3cgjkhe5q8ahfckhw',
       sender,
       msg: {
-        update_whitelisted_addresses: {
-            addresses: ['inj1ewp3hlsn3ge6alv33e20um86uyqxz3h0kd779q'],
-            values: [false]
-        }
+        change_vault_manager: {
+            new_vault_manager: "100",
+        },
       },
+    //   funds: {
+    //     denom: 'inj',
+    //     amount: '1000000000000000000'
+    //   }
     })
     console.log("🚀 ~ msg:", msg)
 

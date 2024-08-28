@@ -15,13 +15,15 @@ config();
     
     const FUND_FACTORY = process.env.FUND_FACTORY!
 
+    console.log(FUND_FACTORY);
+
     const msg = MsgExecuteContract.fromJSON({
-      contractAddress: FUND_FACTORY,
+      contractAddress: 'inj1ygcvq2vzldwq0vr7mr0ha3cgjkhe5q8ahfckhw',
       sender,
       msg: {
         update_whitelisted_addresses: {
-            addresses: ['inj1ewp3hlsn3ge6alv33e20um86uyqxz3h0kd779q'],
-            values: [false]
+            addresses: ['inj1ewp3hlsn3ge6alv33e20um86uyqxz3h0kd779q', 'inj1qwqal6egl9r45nn0433z6xsaz60d5m5v6tjhug'],
+            values: [true, true]
         }
       },
     })

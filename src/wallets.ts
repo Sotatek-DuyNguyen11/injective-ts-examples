@@ -5,7 +5,7 @@ config();
 
 (async () => {
     try {
-        const mnemonic = process.env.MNEMONIC_DUYNT_3!;
+        const mnemonic = process.env.MNEMONIC!;
         // const privateKey = "afdfd9c3d2095ef696594f6cedcae59e72dcd697e2a7521b1578140422a4f890"
         const privateKeyFromMnemonic = PrivateKey.fromMnemonic(mnemonic)
         // const privateKeyFromHex = PrivateKey.fromPrivateKey(privateKey)
