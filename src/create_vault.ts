@@ -12,10 +12,10 @@ config();
     const sender = privateKey.toAddress().toBech32();
     console.log('sender: ', sender);
     
-    // const fundFactoryContract = process.env.FUND_FACTORY!
+    const fundFactoryContract = process.env.FUND_FACTORY!
     
     const msg = MsgExecuteContract.fromJSON({
-      contractAddress: 'inj1w5hjvtv9xa32r2ql838p3vw3phz79xdydhjgde',
+      contractAddress: fundFactoryContract,
       sender,
       msg: {
         create_vault: {

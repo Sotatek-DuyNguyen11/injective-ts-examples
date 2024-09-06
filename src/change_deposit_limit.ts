@@ -12,10 +12,10 @@ config();
     const sender = privateKey.toAddress().toBech32();
     console.log('sender: ', sender);
     
-    // const fundFactoryContract = process.env.FUND_FACTORY!
+    const fundIntanceContract = process.env.FUND_INSTANCE!
     
     const msg = MsgExecuteContract.fromJSON({
-      contractAddress: 'inj1ygcvq2vzldwq0vr7mr0ha3cgjkhe5q8ahfckhw',
+      contractAddress: fundIntanceContract,
       sender,
       msg: {
         change_deposit_limits: {

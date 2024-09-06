@@ -12,19 +12,17 @@ config();
     const sender = privateKey.toAddress().toBech32();
     console.log('sender: ', sender);
     
-    // const fundFactoryContract = process.env.FUND_FACTORY!
-    
     const msg = MsgExecuteContract.fromJSON({
       contractAddress: 'inj1ff9ux5kc9tx534zjzlfttwqhe0y2v97acgpj6p',
       sender,
       msg: {
-        deposit:{
-            amount: '1000000'
+        withdraw:{
+            amount: '900000'
         }
       },
       funds: {
-        denom: 'peggy0x87aB3B4C8661e07D6372361211B96ed4Dc36B1B5',
-        amount: '1000000'
+        denom: 'factory/inj1ff9ux5kc9tx534zjzlfttwqhe0y2v97acgpj6p/duynt-1',
+        amount: '900000'
       }
     })
     console.log("🚀 ~ msg:", msg)

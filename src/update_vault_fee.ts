@@ -6,26 +6,37 @@ config();
 
 (async () => {
   try {
-    const mnemonic = process.env.MNEMONIC
+    const mnemonic = process.env.MNEMONIC_DUYNT_3
     const privateKey = PrivateKey.fromMnemonic(mnemonic!)
+    console.log("🚀 ~ privateKey:", privateKey)
 
     const sender = privateKey.toAddress().toBech32();
-    console.log('sender: ', sender);
-    
-    // const fundFactoryContract = process.env.FUND_FACTORY!
-    
+    console.log("🚀 ~ sender:", sender)
+
+    // const FUND_FACTORY = process.env.FUND_FACTORY!
+
     const msg = MsgExecuteContract.fromJSON({
-      contractAddress: 'inj1ff9ux5kc9tx534zjzlfttwqhe0y2v97acgpj6p',
+      contractAddress: 'inj1ygcvq2vzldwq0vr7mr0ha3cgjkhe5q8ahfckhw',
       sender,
       msg: {
-        deposit:{
-            amount: '1000000'
+        update_vault_fee: {
+          new_management_fee: {
+            share: "0.04"
+          },
+          new_perfomance_fee: {
+            share: "0.04"
+          },
+          new_volume_fee: {
+            share: "0.04"
+          },
+          new_entrance_fee: {
+            share: "0.04"
+          },
+          new_exit_fee: {
+            share: "0.04"
+          },
         }
       },
-      funds: {
-        denom: 'peggy0x87aB3B4C8661e07D6372361211B96ed4Dc36B1B5',
-        amount: '1000000'
-      }
     })
     console.log("🚀 ~ msg:", msg)
 
@@ -38,6 +49,6 @@ config();
 
     console.log('Transaction hash:', txHash)
   } catch (error: any) {
-    console.error('Transaction failed:', error.message)
+    console.error('Transaction failed:', error)
   }
 })();

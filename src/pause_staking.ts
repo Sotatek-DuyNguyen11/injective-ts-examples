@@ -8,24 +8,20 @@ config();
   try {
     const mnemonic = process.env.MNEMONIC
     const privateKey = PrivateKey.fromMnemonic(mnemonic!)
+    console.log("🚀 ~ privateKey:", privateKey)
 
     const sender = privateKey.toAddress().toBech32();
-    console.log('sender: ', sender);
+    console.log("🚀 ~ sender:", sender)
     
-    // const fundFactoryContract = process.env.FUND_FACTORY!
+    const stakingContract = process.env.STAKING_CONTRACT! // staking_contract is recipient
+
+    const time = 2147483647 - Date.now()/1000 - 3600;
+    console.log('time: ', time);
     
     const msg = MsgExecuteContract.fromJSON({
-      contractAddress: 'inj1ff9ux5kc9tx534zjzlfttwqhe0y2v97acgpj6p',
+      contractAddress: stakingContract,
       sender,
-      msg: {
-        deposit:{
-            amount: '1000000'
-        }
-      },
-      funds: {
-        denom: 'peggy0x87aB3B4C8661e07D6372361211B96ed4Dc36B1B5',
-        amount: '1000000'
-      }
+      msg: {"pause": {"duration": {"time":  2147483647}}}
     })
     console.log("🚀 ~ msg:", msg)
 

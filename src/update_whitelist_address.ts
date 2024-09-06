@@ -20,8 +20,8 @@ config();
       sender,
       msg: {
         update_whitelisted_addresses: {
-            addresses: ['inj1ewp3hlsn3ge6alv33e20um86uyqxz3h0kd779q'],
-            values: [false]
+            addresses: ['inj1svaf84s9q6ryhfc4g8uytfwndm47msstw75ew3'],
+            values: [true]
         }
       },
     })

@@ -21,13 +21,9 @@ config();
       sender,
       msg: {
         change_vault_manager: {
-            new_vault_manager: "100",
+            new_vault_manager: "inj1qwqal6egl9r45nn0433z6xsaz60d5m5v6tjhug",
         },
       },
-    //   funds: {
-    //     denom: 'inj',
-    //     amount: '1000000000000000000'
-    //   }
     })
     console.log("🚀 ~ msg:", msg)
 

@@ -20,7 +20,7 @@ config();
   // const contractAddress = 'inj...'
 
   const queryFromObject = { current_staked_balance: {
-    address: 'inj1z6sccypszye9qke2w35m3ptmj7c4tjr2amedyf'
+    address: 'inj1jzmp4vgg4krp5698v04hlkvxsumk0rk40puuuj'
   }}
 
   const contractState = await chainGrpcWasmApi.fetchSmartContractState(contractAddress, queryFromObject)

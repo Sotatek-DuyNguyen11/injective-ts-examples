@@ -16,8 +16,8 @@ config();
     
     // const fundFactoryContract = process.env.FUND_FACTORY!
     
-    const contractAddress = 'inj1ygcvq2vzldwq0vr7mr0ha3cgjkhe5q8ahfckhw';
-  const queryFromObject = { get_vault_status: {}}
+    const contractAddress = 'inj1ff9ux5kc9tx534zjzlfttwqhe0y2v97acgpj6p';
+  const queryFromObject = { get_vault_info: {}}
   const endpoints = getNetworkEndpoints(Network.Testnet)
   const chainGrpcWasmApi = new ChainGrpcWasmApi(endpoints.grpc)
 
@@ -25,7 +25,7 @@ config();
   const jsonString = Buffer.from(contractState.data).toString('utf8')
 
   const parsedData = JSON.parse(jsonString)
-  console.log(parsedData)
+  console.log(parsedData?.current_vault_info?.vault_fees)
     
 } catch (error: any) {
     console.error('Transaction failed:', error.message)
