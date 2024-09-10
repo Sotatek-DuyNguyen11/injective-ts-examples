@@ -15,7 +15,15 @@ config();
      
         const subaccountId = getDefaultSubaccountId(address.toBech32());
 
-        console.log({ injectiveAddress: address.toBech32(), ethereumAddress: address.toHex(), subaccountId })
+        console.log({ injectiveAddress: address.toBech32(), ethereumAddress: address.toHex(), subaccountId, address: privateKeyFromMnemonic.toPrivateKeyHex() })
+
+        const date = new Date();
+        date.setSeconds(date.getSeconds() + 2);
+
+        const nextDate = new Date(Date.now() + 6 * 1000)
+
+        console.log('date:',nextDate, date);
+        
 
     } catch (error) {
         console.log("🚀 ~ error:", error)

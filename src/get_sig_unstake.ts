@@ -14,12 +14,15 @@ async function main() {
 
   const sender = privateKey.toAddress().toBech32();
 
+  console.log('sender: ', sender);
+  
   const privkey = fromHex(process.env.FROM_HEX!);
   
   const keypair = await Secp256k1.makeKeypair(privkey);
   
-  const staked_id = '12312312';
-  const amount = new BigNumberInBase(8).toWei().toFixed();
+  const staked_id = '214531585157879364628543231';
+  const amount = new BigNumberInBase(0.00001).toWei().toFixed();
+  console.log('amount: ', amount);
 
   
   const msg = `execute_unstake: staked_id = ${staked_id} / amount = ${amount} / user = ${sender}`;

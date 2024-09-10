@@ -15,7 +15,7 @@ config();
     // const fundFactoryContract = process.env.FUND_FACTORY!
     
     const msg = MsgExecuteContract.fromJSON({
-      contractAddress: 'inj1ff9ux5kc9tx534zjzlfttwqhe0y2v97acgpj6p',
+      contractAddress: 'inj137tf29euf7spx5jdaax5eamsmuvg08sgauf9ad',
       sender,
       msg: {
         deposit:{

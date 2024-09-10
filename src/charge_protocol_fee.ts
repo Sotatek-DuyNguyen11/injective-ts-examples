@@ -16,7 +16,7 @@ config();
     // const fundFactoryContract = process.env.FUND_FACTORY!
     
     const msg = MsgExecuteContract.fromJSON({
-      contractAddress: 'inj1pv08lylmeyumalmy6kejgrk8uu49w8t8lckwu6',
+      contractAddress: 'inj1lklvs2hgkvdjzzltd4nqw9vtcqwdkjv74xgz4n',
       sender,
       msg: {
         charge_protocol_fee:{}

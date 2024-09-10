@@ -6,7 +6,7 @@ config();
 
 (async () => {
   try {
-    const mnemonic = process.env.MNEMONIC
+    const mnemonic = process.env.MNEMONIC_DUYNT_3
     const privateKey = PrivateKey.fromMnemonic(mnemonic!)
 
     const sender = privateKey.toAddress().toBech32();
