@@ -6,7 +6,7 @@ config();
 
 (async () => {
   try {
-    const mnemonic = process.env.MNEMONIC
+    const mnemonic = process.env.MNEMONIC_SENDER
     const privateKey = PrivateKey.fromMnemonic(mnemonic!)
 
     const sender = privateKey.toAddress().toBech32();
@@ -15,7 +15,7 @@ config();
     // const fundFactoryContract = process.env.FUND_FACTORY!
     
     const msg = MsgExecuteContract.fromJSON({
-      contractAddress: 'inj137tf29euf7spx5jdaax5eamsmuvg08sgauf9ad',
+      contractAddress: 'inj1fqf0x9uqvjs2qy86r6dxqcgj0w660l6wfxw4p7',
       sender,
       msg: {
         deposit:{

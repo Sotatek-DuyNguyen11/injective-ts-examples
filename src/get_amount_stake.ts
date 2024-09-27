@@ -10,7 +10,7 @@ config();
       const endpoints = getNetworkEndpoints(Network.Testnet)
       const chainGrpcWasmApi = new ChainGrpcWasmApi(endpoints.grpc)
 
-      const mnemonic = process.env.MNEMONIC_DUYNT_3
+      const mnemonic = process.env.MNEMONIC
       const privateKey = PrivateKey.fromMnemonic(mnemonic!)
       console.log("🚀 ~ privateKey:", privateKey)
   
@@ -20,7 +20,7 @@ config();
   // const contractAddress = 'inj...'
 
   const queryFromObject = { current_staked_balance: {
-    address: 'inj1jzmp4vgg4krp5698v04hlkvxsumk0rk40puuuj'
+    address: 'inj1z6sccypszye9qke2w35m3ptmj7c4tjr2amedyf'
   }}
 
   const contractState = await chainGrpcWasmApi.fetchSmartContractState(contractAddress, queryFromObject)

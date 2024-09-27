@@ -19,8 +19,8 @@ config();
       sender,
       msg: {
         create_vault: {
-            name: "duynt-1",
-            symbol: "duynt-1",
+            name: "duynt-111111",
+            symbol: "duynt-111111",
             denomination_asset: "peggy0x87aB3B4C8661e07D6372361211B96ed4Dc36B1B5",
             vault_manager: sender,
             fee_recipient: sender,

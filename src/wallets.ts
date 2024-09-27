@@ -5,7 +5,7 @@ config();
 
 (async () => {
     try {
-        const mnemonic = process.env.MNEMONIC!;
+        const mnemonic = process.env.MNEMONIC_DUYNT_3!;
         // const privateKey = "afdfd9c3d2095ef696594f6cedcae59e72dcd697e2a7521b1578140422a4f890"
         const privateKeyFromMnemonic = PrivateKey.fromMnemonic(mnemonic)
         // const privateKeyFromHex = PrivateKey.fromPrivateKey(privateKey)
@@ -15,7 +15,18 @@ config();
      
         const subaccountId = getDefaultSubaccountId(address.toBech32());
 
-        console.log({ injectiveAddress: address.toBech32(), ethereumAddress: address.toHex(), subaccountId, address: privateKeyFromMnemonic.toPrivateKeyHex() })
+        const privateKey  =  privateKeyFromMnemonic.toPrivateKeyHex()
+
+        const publicKey = privateKeyFromMnemonic.toPublicKey().toBase64();
+
+        console.log({ 
+            injectiveAddress: address.toBech32(), 
+            ethereumAddress: address.toHex(), 
+            subaccountId, 
+            address: privateKeyFromMnemonic.toPrivateKeyHex(),
+            privateKey,
+            publicKey
+        })
 
         const date = new Date();
         date.setSeconds(date.getSeconds() + 2);

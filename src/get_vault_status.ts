@@ -16,7 +16,7 @@ config();
     
     // const fundFactoryContract = process.env.FUND_FACTORY!
     
-    const contractAddress = 'inj1ygcvq2vzldwq0vr7mr0ha3cgjkhe5q8ahfckhw';
+    const contractAddress = 'inj19yzru7y5929h5x08ywuz4aptvp94hf3axu9m8r';
   const queryFromObject = { get_vault_status: {}}
   const endpoints = getNetworkEndpoints(Network.Testnet)
   const chainGrpcWasmApi = new ChainGrpcWasmApi(endpoints.grpc)

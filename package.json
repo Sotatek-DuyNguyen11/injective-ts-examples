@@ -16,6 +16,7 @@
     "@injectivelabs/sdk-ts": "^1.14.13",
     "@types/node": "^22.1.0",
     "axios": "^1.7.4",
+    "bignumber.js": "^9.1.2",
     "dayjs": "^1.11.13",
     "dotenv": "^16.0.3",
     "global": "^4.4.0",

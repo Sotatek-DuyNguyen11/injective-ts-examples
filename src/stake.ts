@@ -17,7 +17,7 @@ config();
     const recipientAddress = process.env.STAKING_CONTRACT // staking_contract is recipient
     const cw20 = process.env.CW_20_CONTRACT! 
 
-    const amount = new BigNumberInBase(0.2).toWei(18).toFixed();
+    const amount = new BigNumberInBase(0.0000002).toWei(18).toFixed();
     
     console.log('amount: ', amount);
     

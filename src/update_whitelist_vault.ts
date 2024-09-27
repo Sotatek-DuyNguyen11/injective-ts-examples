@@ -6,7 +6,7 @@ config();
 
 (async () => {
   try {
-    const mnemonic = process.env.MNEMONIC
+    const mnemonic = process.env.MNEMONIC_DUYNT_3
     const privateKey = PrivateKey.fromMnemonic(mnemonic!)
     console.log("🚀 ~ privateKey:", privateKey)
 
@@ -18,11 +18,11 @@ config();
     console.log(FUND_FACTORY);
 
     const msg = MsgExecuteContract.fromJSON({
-      contractAddress: 'inj1ygcvq2vzldwq0vr7mr0ha3cgjkhe5q8ahfckhw',
+      contractAddress: 'inj1fqf0x9uqvjs2qy86r6dxqcgj0w660l6wfxw4p7',
       sender,
       msg: {
         update_whitelisted_addresses: {
-            addresses: ['inj1ewp3hlsn3ge6alv33e20um86uyqxz3h0kd779q', 'inj1qwqal6egl9r45nn0433z6xsaz60d5m5v6tjhug'],
+            addresses: ['inj1fqf0x9uqvjs2qy86r6dxqcgj0w660l6wfxw4p7', 'inj1fqf0x9uqvjs2qy86r6dxqcgj0w660l6wfxw4p7'],
             values: [true, true]
         }
       },

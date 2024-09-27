@@ -14,11 +14,11 @@ config();
     const sender = privateKey.toAddress().toBech32();
     console.log("🚀 ~ sender:", sender)
     
-    const recipientAddress = 'inj1x6fqh8s8tgsy5ex2adz6janp87dujac5tfnjez' 
+    const recipientAddress = 'inj1zrr8d7z44vg04lxg4rkr4wyfn7mqd3sdsxrz2c' 
 
     const amount = {
         denom: 'peggy0x87aB3B4C8661e07D6372361211B96ed4Dc36B1B5',
-        amount: new BigNumberInBase(11).toWei(6).toString()
+        amount: new BigNumberInBase(5).toWei(6).toString()
       }
       const msg = MsgSend.fromJSON({
         amount,

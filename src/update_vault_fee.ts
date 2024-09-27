@@ -16,24 +16,24 @@ config();
     // const FUND_FACTORY = process.env.FUND_FACTORY!
 
     const msg = MsgExecuteContract.fromJSON({
-      contractAddress: 'inj1ygcvq2vzldwq0vr7mr0ha3cgjkhe5q8ahfckhw',
+      contractAddress: 'inj1fqf0x9uqvjs2qy86r6dxqcgj0w660l6wfxw4p7',
       sender,
       msg: {
         update_vault_fee: {
           new_management_fee: {
-            share: "0.04"
+            share: "0.003"
           },
           new_perfomance_fee: {
-            share: "0.04"
+            share: "0.003"
           },
           new_volume_fee: {
-            share: "0.04"
+            share: "0.003"
           },
           new_entrance_fee: {
-            share: "0.04"
+            share: "0.003"
           },
           new_exit_fee: {
-            share: "0.04"
+            share: "0.003"
           },
         }
       },
